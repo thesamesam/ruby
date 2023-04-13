@@ -85,6 +85,13 @@ jobs:
               optflags: '-O2'
             shared: disable
             # check: true
+          - name: 'gcc-12 UBSAN'
+            container: gcc-12
+            env:
+              default_cc: 'gcc-12 -fsanitize=undefined'
+              optflags: '-O2'
+            shared: disable
+            # check: true
           - { name: clang-16,  env: { default_cc: clang-16 } }
           - { name: clang-15,  env: { default_cc: clang-15 } }
           - { name: clang-14,  env: { default_cc: clang-14 } }
